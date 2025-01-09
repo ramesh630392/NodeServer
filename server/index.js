@@ -1,5 +1,4 @@
 const express = require('express');
-const serverless = require('serverless-http'); // Converts Express to a serverless function
 
 const app = express();
 
@@ -15,6 +14,4 @@ app.get('/api/hello', (req, res) => {
   res.status(200).json({ message: 'Hello from Express on Vercel!' });
 });
 
-// Export the server as a serverless function
-module.exports = app;
-module.exports.handler = serverless(app);
+app.listen(5000, ()=>{console.log("CD")})
